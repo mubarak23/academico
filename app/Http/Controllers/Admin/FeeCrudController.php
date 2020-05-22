@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\FeeRequest as StoreRequest;
-use App\Http\Requests\FeeRequest as UpdateRequest;
 // VALIDATION: change the requests to match your own file names if you need form validation
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
@@ -30,37 +29,29 @@ class FeeCrudController extends CrudController
         CRUD::setModel(\App\Models\Fee::class);
         CRUD::setRoute(config('backpack.base.route_prefix').'/fee');
         CRUD::setEntityNameStrings('fee', 'fees');
+    }
 
-        /*
-        |--------------------------------------------------------------------------
-        | CrudPanel Configuration
-        |--------------------------------------------------------------------------
-        */
-
+    protected function setupListOperation()
+    {
         CRUD::addColumns([
             ['name' => 'name', 'label' => 'Name'],
             ['name' => 'price', 'label' => 'Price'],
             ['name' => 'product_code', 'label' => 'Product Code'],
         ]);
-
-        CRUD::addFields([
-            ['name' => 'name', 'label' => 'Name', 'type' => 'text'],
-            ['name' => 'price', 'label' => 'Price', 'type' => 'text'],
-            ['name' => 'product_code', 'label' => 'Product Code', 'type' => 'text'],
-        ]);
-
-        // add asterisk for fields that are required in FeeRequest
-        CRUD::setRequiredFields(StoreRequest::class, 'create');
-        CRUD::setRequiredFields(UpdateRequest::class, 'edit');
     }
 
     protected function setupCreateOperation()
     {
         CRUD::setValidation(StoreRequest::class);
+        CRUD::addFields([
+            ['name' => 'name', 'label' => 'Name', 'type' => 'text'],
+            ['name' => 'price', 'label' => 'Price', 'type' => 'text'],
+            ['name' => 'product_code', 'label' => 'Product Code', 'type' => 'text'],
+        ]);
     }
 
     protected function setupUpdateOperation()
     {
-        CRUD::setValidation(UpdateRequest::class);
+        $this->setupCreateOperation();
     }
 }

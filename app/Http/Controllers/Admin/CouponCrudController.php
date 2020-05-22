@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\CouponRequest as StoreRequest;
-use App\Http\Requests\CouponRequest as UpdateRequest;
 // VALIDATION: change the requests to match your own file names if you need form validation
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
@@ -46,10 +45,6 @@ class CouponCrudController extends CrudController
             ['name' => 'name', 'label' => 'Name', 'type' => 'text'],
             ['name' => 'value', 'label' => 'Value', 'type' => 'text'],
         ]);
-
-        // add asterisk for fields that are required in CouponRequest
-        CRUD::setRequiredFields(StoreRequest::class, 'create');
-        CRUD::setRequiredFields(UpdateRequest::class, 'edit');
     }
 
     protected function setupCreateOperation()
@@ -59,6 +54,6 @@ class CouponCrudController extends CrudController
 
     protected function setupUpdateOperation()
     {
-        CRUD::setValidation(UpdateRequest::class);
+        $this->setupCreateOperation();
     }
 }
