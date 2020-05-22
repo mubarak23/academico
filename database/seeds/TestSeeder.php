@@ -48,7 +48,7 @@ class TestSeeder extends Seeder
         ]);
 
         EnrollmentStatusType::create([
-            'id' => 1,
+            'id' => 6,
             'name' => [
                 'es' => 'PENDIENTE',
                 'en' => 'PENDING',
@@ -57,7 +57,7 @@ class TestSeeder extends Seeder
         ]);
 
         EnrollmentStatusType::create([
-            'id' => 2,
+            'id' => 6,
             'name' => [
                 'es' => 'PAGADA',
                 'en' => 'PAID',
@@ -66,7 +66,7 @@ class TestSeeder extends Seeder
         ]);
 
         EnrollmentStatusType::create([
-            'id' => 3,
+            'id' => 8,
             'name' => [
                 'es' => 'ANULADA',
                 'en' => 'CANCELED',
@@ -75,7 +75,7 @@ class TestSeeder extends Seeder
         ]);
 
         EnrollmentStatusType::create([
-            'id' => 4,
+            'id' => 9,
             'name' => [
                 'es' => 'TRASPASO',
                 'en' => 'TRANSFERED',
@@ -84,7 +84,7 @@ class TestSeeder extends Seeder
         ]);
 
         EnrollmentStatusType::create([
-            'id' => 5,
+            'id' => 10,
             'name' => [
                 'es' => 'DEVOLUCION',
                 'en' => 'REFUND',

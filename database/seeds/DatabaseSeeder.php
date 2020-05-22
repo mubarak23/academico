@@ -33,6 +33,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        
         Campus::create([
             'id' => 1,
             'name' => [
@@ -61,7 +62,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         EnrollmentStatusType::create([
-            'id' => 2,
+            'id' => 1,
             'name' => [
                 'es' => 'PAGADA',
                 'en' => 'PAID',
@@ -70,7 +71,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         EnrollmentStatusType::create([
-            'id' => 3,
+            'id' => 2,
             'name' => [
                 'es' => 'ANULADA',
                 'en' => 'CANCELED',
@@ -79,7 +80,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         EnrollmentStatusType::create([
-            'id' => 4,
+            'id' => 3,
             'name' => [
                 'es' => 'TRASPASO',
                 'en' => 'TRANSFERED',
@@ -88,7 +89,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         EnrollmentStatusType::create([
-            'id' => 5,
+            'id' => 4,
             'name' => [
                 'es' => 'DEVOLUCION',
                 'en' => 'REFUND',
@@ -141,6 +142,8 @@ class DatabaseSeeder extends Seeder
             ],
         ]);
 
+
+  
         EvaluationType::create([
             'id' => 1,
             'name' => [
@@ -158,6 +161,7 @@ class DatabaseSeeder extends Seeder
                 'en' => 'SKILLS',
             ],
         ]);
+
 
         AttendanceType::create([
             'id' => 1,
@@ -251,6 +255,19 @@ class DatabaseSeeder extends Seeder
         //LeadType::create(['id' => '6', 'name' => 'exAlumno']);  // merged with 3
         //LeadType::create(['id' => '7', 'name' => 'oldStudent']);  // merged with 3
 
+
+        
+
+      
+
+        
+
+        
+        
+
+       
+
+     
         Paymentmethod::create(['id' => '1', 'name' => 'Tarjeta de Crédito', 'code' => 'TC']);
         Paymentmethod::create(['id' => '2', 'name' => 'Crédito', 'code' => 'CRC']);
         Paymentmethod::create(['id' => '3', 'name' => 'Efectivo', 'code' => 'EFECT']);
